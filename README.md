@@ -6,3 +6,4 @@
 - [Lab 4](http://www.hackerrank.com/daa-practice-4)
 - [Lab 5](http://www.hackerrank.com/daa-practice-5)
 - [Lab 6](http://www.hackerrank.com/daa-practice-6)
+- [Lab 7](http://www.hackerrank.com/daa-practice-7)
