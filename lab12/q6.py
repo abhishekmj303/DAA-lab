@@ -17,8 +17,8 @@ visited = []
 def check_odd_cycle(graph, node, cycle: tuple):
     global visited
 
-    if node in visited:
-        if node in cycle and (len(cycle) - cycle.index(node)) % 2 == 1:
+    if node in cycle:
+        if (len(cycle) - cycle.index(node)) % 2 == 1:
             return True
         else:
             return False
@@ -31,8 +31,9 @@ def check_odd_cycle(graph, node, cycle: tuple):
     return False
 
 for v in vertices:
-    if check_odd_cycle(graph, v, ()):
-        print("The graph contains an odd cycle")
-        break
+    if v not in visited:
+        if check_odd_cycle(graph, v, ()):
+            print("The graph contains an odd cycle")
+            break
 else:
     print("The graph does not contains an odd cycle")

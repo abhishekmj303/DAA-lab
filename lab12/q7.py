@@ -17,8 +17,8 @@ visited = []
 def check_even_cycle(graph, node, cycle: tuple):
     global visited
 
-    if node in visited:
-        if node in cycle and (len(cycle) - cycle.index(node)) % 2 == 0:
+    if node in cycle:
+        if (len(cycle) - cycle.index(node)) % 2 == 0:
             return True
         else:
             return False
@@ -31,8 +31,9 @@ def check_even_cycle(graph, node, cycle: tuple):
     return False
 
 for v in vertices:
-    if check_even_cycle(graph, v, ()):
-        print("The graph contains an even cycle")
-        break
+    if v not in visited:
+        if check_even_cycle(graph, v, ()):
+            print("The graph contains an even cycle")
+            break
 else:
     print("The graph does not contains an even cycle")
